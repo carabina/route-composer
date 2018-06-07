@@ -23,7 +23,7 @@ public struct SplitControllerFactory: Container {
     /// An animatable property that controls how the primary view controller is hidden and displayed.
     /// A value of `.automatic` specifies the default behavior split view controller, which on an iPad,
     /// corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
-    public let preferredDisplayMode: UISplitViewControllerDisplayMode
+    public let preferredDisplayMode: UISplitViewController.DisplayMode
 
     /// If 'true', hidden view can be presented and dismissed via a swipe gesture. Defaults to 'true'.
     public let presentsWithGesture: Bool
@@ -32,8 +32,7 @@ public struct SplitControllerFactory: Container {
     public init(delegate: UISplitViewControllerDelegate? = nil,
                 presentsWithGesture: Bool = true,
                 isCollapsed: Bool = false,
-                preferredDisplayMode: UISplitViewControllerDisplayMode = .automatic) {
-        self.delegate = delegate
+                preferredDisplayMode: UISplitViewController.DisplayMode = .automatic) {        self.delegate = delegate
         self.preferredDisplayMode = preferredDisplayMode
         self.presentsWithGesture = presentsWithGesture
     }
